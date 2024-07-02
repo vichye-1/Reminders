@@ -22,6 +22,7 @@ class RegisterViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableview()
     }
     
     override func configureHierarchy() {
@@ -60,4 +61,25 @@ class RegisterViewController: BaseViewController {
     private func rightBarButtonClicked() {
         
     }
+    
+    private func configureTableview() {
+        let identifier = TitleTableViewCell.identifier
+        registerTableView.delegate = self
+        registerTableView.dataSource = self
+        registerTableView.register(TitleTableViewCell.self, forCellReuseIdentifier: identifier)
+    }
+}
+
+extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return CellType.allCases.count - 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = TitleTableViewCell.identifier
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TitleTableViewCell
+        return cell
+    }
+    
+    
 }

@@ -18,6 +18,12 @@
 		EFAC583A2C33E895005975DD /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC58392C33E895005975DD /* IQKeyboardManagerSwift */; };
 		EFAC583D2C33E95D005975DD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC583C2C33E95D005975DD /* RealmSwift */; };
 		EFAC58402C33EE37005975DD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC583F2C33EE37005975DD /* RegisterViewController.swift */; };
+		EFAC58442C3456E6005975DD /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58432C3456E6005975DD /* UIViewController+.swift */; };
+		EFAC58462C3456FF005975DD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58452C3456FF005975DD /* UIView+.swift */; };
+		EFAC58492C345754005975DD /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58482C345754005975DD /* ReuseIdentifierProtocol.swift */; };
+		EFAC584C2C3458DD005975DD /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC584B2C3458DD005975DD /* TitleTableViewCell.swift */; };
+		EFAC584F2C345A47005975DD /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC584E2C345A47005975DD /* CellType.swift */; };
+		EFAC58512C345ADC005975DD /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58502C345ADC005975DD /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		EFAC58292C33E421005975DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFAC58302C33E5B6005975DD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EFAC583F2C33EE37005975DD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		EFAC58432C3456E6005975DD /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		EFAC58452C3456FF005975DD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		EFAC58482C345754005975DD /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
+		EFAC584B2C3458DD005975DD /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		EFAC584E2C345A47005975DD /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		EFAC58502C345ADC005975DD /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,10 @@
 		EFAC581A2C33E41F005975DD /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				EFAC584D2C345961005975DD /* Constant */,
+				EFAC584A2C345842005975DD /* Cell */,
+				EFAC58472C34572C005975DD /* Protocol */,
+				EFAC58422C3456CD005975DD /* Extensions */,
 				EFAC583E2C33EE13005975DD /* Register */,
 				EFAC582F2C33E5AC005975DD /* Base */,
 				EFAC581B2C33E41F005975DD /* AppDelegate.swift */,
@@ -82,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				EFAC58302C33E5B6005975DD /* BaseViewController.swift */,
+				EFAC58502C345ADC005975DD /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -92,6 +109,39 @@
 				EFAC583F2C33EE37005975DD /* RegisterViewController.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		EFAC58422C3456CD005975DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EFAC58432C3456E6005975DD /* UIViewController+.swift */,
+				EFAC58452C3456FF005975DD /* UIView+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EFAC58472C34572C005975DD /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				EFAC58482C345754005975DD /* ReuseIdentifierProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		EFAC584A2C345842005975DD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EFAC584B2C3458DD005975DD /* TitleTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EFAC584D2C345961005975DD /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				EFAC584E2C345A47005975DD /* CellType.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +227,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */,
+				EFAC584F2C345A47005975DD /* CellType.swift in Sources */,
+				EFAC58492C345754005975DD /* ReuseIdentifierProtocol.swift in Sources */,
 				EFAC58402C33EE37005975DD /* RegisterViewController.swift in Sources */,
+				EFAC58462C3456FF005975DD /* UIView+.swift in Sources */,
+				EFAC58512C345ADC005975DD /* BaseTableViewCell.swift in Sources */,
+				EFAC58442C3456E6005975DD /* UIViewController+.swift in Sources */,
 				EFAC58312C33E5B6005975DD /* BaseViewController.swift in Sources */,
 				EFAC581C2C33E41F005975DD /* AppDelegate.swift in Sources */,
+				EFAC584C2C3458DD005975DD /* TitleTableViewCell.swift in Sources */,
 				EFAC581E2C33E41F005975DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
