@@ -30,7 +30,7 @@ class RegisterViewController: BaseViewController {
     }
     
     override func configureUI() {
-        let navItem = UINavigationItem(title: "새로운 미리 알림")
+        let navItem = UINavigationItem(title: "새로운 할 일")
         let leftButton = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(leftBarButtonClicked))
         let rightButton = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(rightBarButtonClicked))
         
