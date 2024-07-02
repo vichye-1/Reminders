@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 import SnapKit
 
 class RegisterViewController: BaseViewController {
@@ -42,8 +43,8 @@ class RegisterViewController: BaseViewController {
     
     override func configureUI() {
         let navItem = UINavigationItem(title: "새로운 할 일")
-        let leftButton = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(leftBarButtonClicked))
-        let rightButton = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(rightBarButtonClicked))
+        let leftButton = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(CancelButtonClicked))
+        let rightButton = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(addButtonClicked))
         navItem.rightBarButtonItem = rightButton
         navItem.leftBarButtonItem = leftButton
         navigationBar.setItems([navItem], animated: true)
@@ -53,13 +54,28 @@ class RegisterViewController: BaseViewController {
     }
     
     @objc
-    private func leftBarButtonClicked() {
+    private func CancelButtonClicked() {
         dismiss(animated: true)
     }
     
     @objc
-    private func rightBarButtonClicked() {
+    private func addButtonClicked() {
+        print(#function)
+        let realm = try! Realm()
+        guard let titleCell = registerTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TitleTableViewCell else {
+            print("toast message")
+            return
+        }
+        let title = titleCell.titleTextView.text ?? ""
         
+        let reminder = ReminderTable(reminderTitle: title, dueDate: Date())
+        reminder.reminderTitle = title
+        
+        try! realm.write {
+            realm.add(reminder)
+            print("reminder saved successfully")
+        }
+        dismiss(animated: true)
     }
     
     private func configureTableview() {
