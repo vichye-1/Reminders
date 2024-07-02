@@ -15,17 +15,27 @@ class RegisterViewController: BaseViewController {
         return navigationBar
     }()
     
+    let registerTableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func configureHierarchy() {
-        [navigationBar].forEach { view.addSubview($0) }
+        [navigationBar, registerTableView].forEach { view.addSubview($0) }
     }
     
     override func configureConstraints() {
         navigationBar.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        registerTableView.snp.makeConstraints { make in
+            make.top.equalTo(navigationBar.snp.bottom)
+            make.horizontalEdges.bottom.equalTo(view)
         }
     }
     
