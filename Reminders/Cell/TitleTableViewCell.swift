@@ -10,10 +10,12 @@ import SnapKit
 
 class TitleTableViewCell: BaseTableViewCell {
 
-    let titleTextField = {
-        let textField = UITextField()
-        textField.placeholder = CellType.title.title
-        return textField
+    let titleTextView = {
+        let textView = UITextView()
+        textView.font = UIFont.systemFont(ofSize: 15)
+        textView.textContainerInset = .init(top: 10, left: 8, bottom: 10, right: 8)
+        //textView.isScrollEnabled = false
+        return textView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -21,11 +23,11 @@ class TitleTableViewCell: BaseTableViewCell {
     }
 
     override func configureHierarchy() {
-        contentView.addSubview(titleTextField)
+        contentView.addSubview(titleTextView)
     }
     
     override func configureConstraints() {
-        titleTextField.snp.makeConstraints { make in
+        titleTextView.snp.makeConstraints { make in
             make.edges.equalTo(contentView)
         }
     }
