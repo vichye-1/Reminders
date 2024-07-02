@@ -10,6 +10,7 @@ import UIKit
 class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         configureHierarchy()
         configureConstraints()
         configureUI()
@@ -17,7 +18,5 @@ class BaseViewController: UIViewController {
     
     func configureHierarchy() { }
     func configureConstraints() { }
-    func configureUI() { 
-        view.backgroundColor = .white
-    }
+    func configureUI() { }
 }
