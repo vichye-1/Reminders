@@ -33,11 +33,12 @@ class RegisterViewController: BaseViewController {
         let navItem = UINavigationItem(title: "새로운 할 일")
         let leftButton = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(leftBarButtonClicked))
         let rightButton = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(rightBarButtonClicked))
-        
         navItem.rightBarButtonItem = rightButton
         navItem.leftBarButtonItem = leftButton
-        
         navigationBar.setItems([navItem], animated: true)
+        // navigationBar 구분선 투명하게
+        navigationBar.shadowImage = UIImage()
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
     
     @objc
