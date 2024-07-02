@@ -36,14 +36,14 @@ class RegisterViewController: BaseViewController {
         navItem.rightBarButtonItem = rightButton
         navItem.leftBarButtonItem = leftButton
         navigationBar.setItems([navItem], animated: true)
-        // navigationBar 구분선 투명하게
+        // navigationBar 구분선 투명하게 설정
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
     
     @objc
     private func leftBarButtonClicked() {
-        
+        dismiss(animated: true)
     }
     
     @objc
