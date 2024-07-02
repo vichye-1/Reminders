@@ -17,6 +17,7 @@
 		EFAC58372C33E885005975DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC58362C33E885005975DD /* SnapKit */; };
 		EFAC583A2C33E895005975DD /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC58392C33E895005975DD /* IQKeyboardManagerSwift */; };
 		EFAC583D2C33E95D005975DD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC583C2C33E95D005975DD /* RealmSwift */; };
+		EFAC58402C33EE37005975DD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC583F2C33EE37005975DD /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EFAC58272C33E421005975DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFAC58292C33E421005975DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFAC58302C33E5B6005975DD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EFAC583F2C33EE37005975DD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		EFAC581A2C33E41F005975DD /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				EFAC583E2C33EE13005975DD /* Register */,
 				EFAC582F2C33E5AC005975DD /* Base */,
 				EFAC581B2C33E41F005975DD /* AppDelegate.swift */,
 				EFAC581D2C33E41F005975DD /* SceneDelegate.swift */,
@@ -81,6 +84,14 @@
 				EFAC58302C33E5B6005975DD /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		EFAC583E2C33EE13005975DD /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				EFAC583F2C33EE37005975DD /* RegisterViewController.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */,
+				EFAC58402C33EE37005975DD /* RegisterViewController.swift in Sources */,
 				EFAC58312C33E5B6005975DD /* BaseViewController.swift in Sources */,
 				EFAC581C2C33E41F005975DD /* AppDelegate.swift in Sources */,
 				EFAC581E2C33E41F005975DD /* SceneDelegate.swift in Sources */,

@@ -33,7 +33,13 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        newReminderButton.addTarget(self, action: #selector(newReminderButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc
+    private func newReminderButtonClicked() {
+        let nextVC = RegisterViewController()
+        present(nextVC, animated: true)
     }
     
     override func configureHierarchy() {
