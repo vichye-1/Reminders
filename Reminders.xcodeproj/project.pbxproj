@@ -13,6 +13,10 @@
 		EFAC58252C33E421005975DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFAC58242C33E421005975DD /* Assets.xcassets */; };
 		EFAC58282C33E421005975DD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EFAC58272C33E421005975DD /* Base */; };
 		EFAC58312C33E5B6005975DD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58302C33E5B6005975DD /* BaseViewController.swift */; };
+		EFAC58342C33E87A005975DD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC58332C33E87A005975DD /* Toast */; };
+		EFAC58372C33E885005975DD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC58362C33E885005975DD /* SnapKit */; };
+		EFAC583A2C33E895005975DD /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC58392C33E895005975DD /* IQKeyboardManagerSwift */; };
+		EFAC583D2C33E95D005975DD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC583C2C33E95D005975DD /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAC583D2C33E95D005975DD /* RealmSwift in Frameworks */,
+				EFAC58342C33E87A005975DD /* Toast in Frameworks */,
+				EFAC58372C33E885005975DD /* SnapKit in Frameworks */,
+				EFAC583A2C33E895005975DD /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +99,12 @@
 			dependencies = (
 			);
 			name = Reminders;
+			packageProductDependencies = (
+				EFAC58332C33E87A005975DD /* Toast */,
+				EFAC58362C33E885005975DD /* SnapKit */,
+				EFAC58392C33E895005975DD /* IQKeyboardManagerSwift */,
+				EFAC583C2C33E95D005975DD /* RealmSwift */,
+			);
 			productName = Reminders;
 			productReference = EFAC58182C33E41F005975DD /* Reminders.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +133,12 @@
 				Base,
 			);
 			mainGroup = EFAC580F2C33E41F005975DD;
+			packageReferences = (
+				EFAC58322C33E87A005975DD /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				EFAC58352C33E885005975DD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EFAC58382C33E894005975DD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				EFAC583B2C33E95D005975DD /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = EFAC58192C33E41F005975DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -369,6 +389,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EFAC58322C33E87A005975DD /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		EFAC58352C33E885005975DD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		EFAC58382C33E894005975DD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.3;
+			};
+		};
+		EFAC583B2C33E95D005975DD /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.52.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EFAC58332C33E87A005975DD /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFAC58322C33E87A005975DD /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		EFAC58362C33E885005975DD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFAC58352C33E885005975DD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EFAC58392C33E895005975DD /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFAC58382C33E894005975DD /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		EFAC583C2C33E95D005975DD /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFAC583B2C33E95D005975DD /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EFAC58102C33E41F005975DD /* Project object */;
 }
