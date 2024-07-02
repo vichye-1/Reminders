@@ -24,6 +24,7 @@
 		EFAC584C2C3458DD005975DD /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC584B2C3458DD005975DD /* TitleTableViewCell.swift */; };
 		EFAC584F2C345A47005975DD /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC584E2C345A47005975DD /* CellType.swift */; };
 		EFAC58512C345ADC005975DD /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58502C345ADC005975DD /* BaseTableViewCell.swift */; };
+		EFAC58552C346A51005975DD /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58542C346A51005975DD /* ReminderModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EFAC584B2C3458DD005975DD /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		EFAC584E2C345A47005975DD /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
 		EFAC58502C345ADC005975DD /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		EFAC58542C346A51005975DD /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,15 +80,16 @@
 		EFAC581A2C33E41F005975DD /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				EFAC58532C346A31005975DD /* Database */,
+				EFAC58522C3469CE005975DD /* Home */,
+				EFAC583E2C33EE13005975DD /* Register */,
 				EFAC584D2C345961005975DD /* Constant */,
 				EFAC584A2C345842005975DD /* Cell */,
-				EFAC58472C34572C005975DD /* Protocol */,
 				EFAC58422C3456CD005975DD /* Extensions */,
-				EFAC583E2C33EE13005975DD /* Register */,
 				EFAC582F2C33E5AC005975DD /* Base */,
+				EFAC58472C34572C005975DD /* Protocol */,
 				EFAC581B2C33E41F005975DD /* AppDelegate.swift */,
 				EFAC581D2C33E41F005975DD /* SceneDelegate.swift */,
-				EFAC581F2C33E41F005975DD /* HomeViewController.swift */,
 				EFAC58242C33E421005975DD /* Assets.xcassets */,
 				EFAC58262C33E421005975DD /* LaunchScreen.storyboard */,
 				EFAC58292C33E421005975DD /* Info.plist */,
@@ -142,6 +145,22 @@
 				EFAC584E2C345A47005975DD /* CellType.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		EFAC58522C3469CE005975DD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EFAC581F2C33E41F005975DD /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EFAC58532C346A31005975DD /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				EFAC58542C346A51005975DD /* ReminderModel.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +250,7 @@
 				EFAC58492C345754005975DD /* ReuseIdentifierProtocol.swift in Sources */,
 				EFAC58402C33EE37005975DD /* RegisterViewController.swift in Sources */,
 				EFAC58462C3456FF005975DD /* UIView+.swift in Sources */,
+				EFAC58552C346A51005975DD /* ReminderModel.swift in Sources */,
 				EFAC58512C345ADC005975DD /* BaseTableViewCell.swift in Sources */,
 				EFAC58442C3456E6005975DD /* UIViewController+.swift in Sources */,
 				EFAC58312C33E5B6005975DD /* BaseViewController.swift in Sources */,
