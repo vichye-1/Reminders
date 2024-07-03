@@ -26,6 +26,7 @@
 		EFAC58512C345ADC005975DD /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58502C345ADC005975DD /* BaseTableViewCell.swift */; };
 		EFAC58552C346A51005975DD /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58542C346A51005975DD /* ReminderModel.swift */; };
 		EFAC58582C3470B4005975DD /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58572C3470B4005975DD /* ListViewController.swift */; };
+		EFC567012C351FBC00E702AD /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		EFAC58502C345ADC005975DD /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		EFAC58542C346A51005975DD /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 		EFAC58572C3470B4005975DD /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				EFAC584B2C3458DD005975DD /* TitleTableViewCell.swift */,
+				EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				EFAC58312C33E5B6005975DD /* BaseViewController.swift in Sources */,
 				EFAC581C2C33E41F005975DD /* AppDelegate.swift in Sources */,
 				EFAC584C2C3458DD005975DD /* TitleTableViewCell.swift in Sources */,
+				EFC567012C351FBC00E702AD /* ContentTableViewCell.swift in Sources */,
 				EFAC58582C3470B4005975DD /* ListViewController.swift in Sources */,
 				EFAC581E2C33E41F005975DD /* SceneDelegate.swift in Sources */,
 			);

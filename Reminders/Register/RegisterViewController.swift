@@ -79,10 +79,12 @@ class RegisterViewController: BaseViewController {
     }
     
     private func configureTableview() {
-        let identifier = TitleTableViewCell.identifier
+        let titleIdentifier = TitleTableViewCell.identifier
+        let contentIdenfier = ContentTableViewCell.identifier
         registerTableView.delegate = self
         registerTableView.dataSource = self
-        registerTableView.register(TitleTableViewCell.self, forCellReuseIdentifier: identifier)
+        registerTableView.register(TitleTableViewCell.self, forCellReuseIdentifier: titleIdentifier)
+        registerTableView.register(ContentTableViewCell.self, forCellReuseIdentifier: contentIdenfier)
     }
 }
 
@@ -101,9 +103,21 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = TitleTableViewCell.identifier
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TitleTableViewCell
-        return cell
+        switch indexPath.row {
+        case 0:
+            let identifier = TitleTableViewCell.identifier
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TitleTableViewCell
+            return cell
+        case 1:
+            let identifier = ContentTableViewCell.identifier
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ContentTableViewCell
+            return cell
+        default:
+            let identifier = TitleTableViewCell.identifier
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TitleTableViewCell
+            return cell
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
