@@ -13,7 +13,7 @@ class ContentTableViewCell: BaseTableViewCell {
     let contentTextView = {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 15)
-        textView.textContainerInset = .init(top: 10, left: 8, bottom: 10, right: 8)
+        textView.textContainerInset = .init(top: 15, left: 8, bottom: 0, right: 8)
         textView.text = "메모"
         //textView.isScrollEnabled = false
         return textView

@@ -13,7 +13,7 @@ class TitleTableViewCell: BaseTableViewCell {
     let titleTextView = {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 15)
-        textView.textContainerInset = .init(top: 10, left: 8, bottom: 10, right: 8)
+        textView.textContainerInset = .init(top: 15, left: 8, bottom: 10, right: 8)
         textView.text = "제목"
         //textView.isScrollEnabled = false
         return textView
