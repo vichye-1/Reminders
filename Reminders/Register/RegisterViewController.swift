@@ -81,10 +81,12 @@ class RegisterViewController: BaseViewController {
     private func configureTableview() {
         let titleIdentifier = TitleTableViewCell.identifier
         let contentIdenfier = ContentTableViewCell.identifier
+        let componentIdentifier = ComponentTableViewCell.identifier
         registerTableView.delegate = self
         registerTableView.dataSource = self
         registerTableView.register(TitleTableViewCell.self, forCellReuseIdentifier: titleIdentifier)
         registerTableView.register(ContentTableViewCell.self, forCellReuseIdentifier: contentIdenfier)
+        registerTableView.register(ComponentTableViewCell.self, forCellReuseIdentifier: componentIdentifier)
     }
 }
 
@@ -103,21 +105,24 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
-            let identifier = TitleTableViewCell.identifier
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TitleTableViewCell
-            return cell
-        case 1:
-            let identifier = ContentTableViewCell.identifier
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ContentTableViewCell
-            return cell
+            if indexPath.row == 0 {
+                let identifier = TitleTableViewCell.identifier
+                let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TitleTableViewCell
+                return cell
+            } else if indexPath.row == 1 {
+                let identifier = ContentTableViewCell.identifier
+                let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ContentTableViewCell
+                return cell
+            }
+            
         default:
-            let identifier = TitleTableViewCell.identifier
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TitleTableViewCell
+            let identifier = ComponentTableViewCell.identifier
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
             return cell
         }
-        
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
