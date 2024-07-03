@@ -11,11 +11,6 @@ import SnapKit
 
 class RegisterViewController: BaseViewController {
     
-    let navigationBar = {
-        let navigationBar = UINavigationBar()
-        return navigationBar
-    }()
-    
     let registerTableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         return tableView
@@ -27,33 +22,23 @@ class RegisterViewController: BaseViewController {
     }
     
     override func configureHierarchy() {
-        [navigationBar, registerTableView].forEach { view.addSubview($0) }
+        [registerTableView].forEach { view.addSubview($0) }
     }
     
     override func configureConstraints() {
-        navigationBar.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
-        }
-        
         registerTableView.snp.makeConstraints { make in
-            make.top.equalTo(navigationBar.snp.bottom)
-            make.horizontalEdges.bottom.equalTo(view)
+            make.edges.equalTo(view)
         }
     }
     
     override func configureUI() {
-        let navItem = UINavigationItem(title: "새로운 할 일")
-        let leftButton = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(CancelButtonClicked))
-        let rightButton = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(addButtonClicked))
-        navItem.rightBarButtonItem = rightButton
-        navItem.leftBarButtonItem = leftButton
-        navigationBar.setItems([navItem], animated: true)
-        navigationBar.shadowImage = UIImage()
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        title = "새로운 할 일"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(cancelButtonClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(addButtonClicked))
     }
     
     @objc
-    private func CancelButtonClicked() {
+    private func cancelButtonClicked() {
         dismiss(animated: true)
     }
     
@@ -144,8 +129,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         switch cellType {
         case .duedate:
             let dueDateVC = DueDateViewController()
-            let nextVC = UINavigationController(rootViewController: dueDateVC)
-            present(nextVC, animated: true)
+            navigationController?.pushViewController(dueDateVC, animated: true)
         default:
             break
         }

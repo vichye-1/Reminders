@@ -39,7 +39,8 @@ class HomeViewController: BaseViewController {
     @objc
     private func newReminderButtonClicked() {
         let nextVC = RegisterViewController()
-        present(nextVC, animated: true)
+        let navController = UINavigationController(rootViewController: nextVC)
+        present(navController, animated: true)
     }
     
     override func configureHierarchy() {
@@ -59,4 +60,3 @@ class HomeViewController: BaseViewController {
     
     
 }
-
