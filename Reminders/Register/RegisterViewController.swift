@@ -130,6 +130,9 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         case .duedate:
             let dueDateVC = DueDateViewController()
             navigationController?.pushViewController(dueDateVC, animated: true)
+        case .tag:
+            let tagVC = TagViewController()
+            navigationController?.pushViewController(tagVC, animated: true)
         default:
             break
         }

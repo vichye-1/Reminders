@@ -29,6 +29,7 @@
 		EFC567012C351FBC00E702AD /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */; };
 		EFC567032C35259100E702AD /* componentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567022C35259100E702AD /* componentTableViewCell.swift */; };
 		EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567052C35339300E702AD /* DueDateViewController.swift */; };
+		EFC567082C3587A900E702AD /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567072C3587A900E702AD /* TagViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		EFC567022C35259100E702AD /* componentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = componentTableViewCell.swift; sourceTree = "<group>"; };
 		EFC567052C35339300E702AD /* DueDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueDateViewController.swift; sourceTree = "<group>"; };
+		EFC567072C3587A900E702AD /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				EFAC584A2C345842005975DD /* Cell */,
 				EFAC583F2C33EE37005975DD /* RegisterViewController.swift */,
 				EFC567052C35339300E702AD /* DueDateViewController.swift */,
+				EFC567072C3587A900E702AD /* TagViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */,
 				EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */,
 				EFAC584F2C345A47005975DD /* CellType.swift in Sources */,
+				EFC567082C3587A900E702AD /* TagViewController.swift in Sources */,
 				EFAC58492C345754005975DD /* ReuseIdentifierProtocol.swift in Sources */,
 				EFAC58402C33EE37005975DD /* RegisterViewController.swift in Sources */,
 				EFAC58462C3456FF005975DD /* UIView+.swift in Sources */,
