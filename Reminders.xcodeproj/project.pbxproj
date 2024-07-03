@@ -28,6 +28,7 @@
 		EFAC58582C3470B4005975DD /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58572C3470B4005975DD /* ListViewController.swift */; };
 		EFC567012C351FBC00E702AD /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */; };
 		EFC567032C35259100E702AD /* componentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567022C35259100E702AD /* componentTableViewCell.swift */; };
+		EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567052C35339300E702AD /* DueDateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		EFAC58572C3470B4005975DD /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		EFC567022C35259100E702AD /* componentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = componentTableViewCell.swift; sourceTree = "<group>"; };
+		EFC567052C35339300E702AD /* DueDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueDateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,6 @@
 				EFAC58522C3469CE005975DD /* Home */,
 				EFAC583E2C33EE13005975DD /* Register */,
 				EFAC584D2C345961005975DD /* Constant */,
-				EFAC584A2C345842005975DD /* Cell */,
 				EFAC58422C3456CD005975DD /* Extensions */,
 				EFAC582F2C33E5AC005975DD /* Base */,
 				EFAC58472C34572C005975DD /* Protocol */,
@@ -116,7 +117,9 @@
 		EFAC583E2C33EE13005975DD /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				EFAC584A2C345842005975DD /* Cell */,
 				EFAC583F2C33EE37005975DD /* RegisterViewController.swift */,
+				EFC567052C35339300E702AD /* DueDateViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */,
+				EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */,
 				EFAC584F2C345A47005975DD /* CellType.swift in Sources */,
 				EFAC58492C345754005975DD /* ReuseIdentifierProtocol.swift in Sources */,
 				EFAC58402C33EE37005975DD /* RegisterViewController.swift in Sources */,

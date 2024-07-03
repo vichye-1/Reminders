@@ -44,4 +44,8 @@ class ComponentTableViewCell: BaseTableViewCell {
             make.width.equalTo(chevronImageView.snp.height).multipliedBy(0.5)
         }
     }
+    
+    func configureTitle(cellTitle: CellType) {
+        componentLabel.text = cellTitle.title
+    }
 }

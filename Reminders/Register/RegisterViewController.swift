@@ -48,7 +48,6 @@ class RegisterViewController: BaseViewController {
         navItem.rightBarButtonItem = rightButton
         navItem.leftBarButtonItem = leftButton
         navigationBar.setItems([navItem], animated: true)
-        // navigationBar 구분선 투명하게 설정
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
@@ -120,6 +119,8 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             let identifier = ComponentTableViewCell.identifier
             let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
+            let cellType = CellType.allCases[indexPath.section + 1]
+            cell.configureTitle(cellTitle: cellType)
             return cell
         }
         return UITableViewCell()
@@ -135,6 +136,18 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
             }
         default:
             return 44
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellType = CellType.allCases[indexPath.section + 1]
+        switch cellType {
+        case .duedate:
+            let dueDateVC = DueDateViewController()
+            let nextVC = UINavigationController(rootViewController: dueDateVC)
+            present(nextVC, animated: true)
+        default:
+            break
         }
     }
 }
