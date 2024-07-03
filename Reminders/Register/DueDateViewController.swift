@@ -6,15 +6,35 @@
 //
 
 import UIKit
+import SnapKit
 
 class DueDateViewController: BaseViewController {
+    
+    var datePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        picker.preferredDatePickerStyle = .inline
+        return picker
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureDatePicker()
     }
     
+    override func configureHierarchy() {
+        view.addSubview(datePicker)
+    }
+    override func configureConstraints() {
+        datePicker.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
     override func configureUI() {
         navigationItem.title = "마감일"
+    }
+    
+    func configureDatePicker() {
+        
     }
 }
