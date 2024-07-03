@@ -40,7 +40,8 @@ class ComponentTableViewCell: BaseTableViewCell {
         chevronImageView.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
             make.trailing.equalTo(contentView).inset(16)
-            make.width.height.equalTo(contentView.snp.height).multipliedBy(0.3)
+            make.height.equalTo(contentView.snp.height).multipliedBy(0.3)
+            make.width.equalTo(chevronImageView.snp.height).multipliedBy(0.5)
         }
     }
 }
