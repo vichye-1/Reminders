@@ -133,6 +133,9 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         case .tag:
             let tagVC = TagViewController()
             navigationController?.pushViewController(tagVC, animated: true)
+        case .priority:
+            let priorityVC = PriorityViewController()
+            navigationController?.pushViewController(priorityVC, animated: true)
         default:
             break
         }

@@ -30,6 +30,7 @@
 		EFC567032C35259100E702AD /* componentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567022C35259100E702AD /* componentTableViewCell.swift */; };
 		EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567052C35339300E702AD /* DueDateViewController.swift */; };
 		EFC567082C3587A900E702AD /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567072C3587A900E702AD /* TagViewController.swift */; };
+		EFC5670A2C35886B00E702AD /* PriorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567092C35886B00E702AD /* PriorityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		EFC567022C35259100E702AD /* componentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = componentTableViewCell.swift; sourceTree = "<group>"; };
 		EFC567052C35339300E702AD /* DueDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueDateViewController.swift; sourceTree = "<group>"; };
 		EFC567072C3587A900E702AD /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		EFC567092C35886B00E702AD /* PriorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				EFAC583F2C33EE37005975DD /* RegisterViewController.swift */,
 				EFC567052C35339300E702AD /* DueDateViewController.swift */,
 				EFC567072C3587A900E702AD /* TagViewController.swift */,
+				EFC567092C35886B00E702AD /* PriorityViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				EFAC58312C33E5B6005975DD /* BaseViewController.swift in Sources */,
 				EFAC581C2C33E41F005975DD /* AppDelegate.swift in Sources */,
 				EFAC584C2C3458DD005975DD /* TitleTableViewCell.swift in Sources */,
+				EFC5670A2C35886B00E702AD /* PriorityViewController.swift in Sources */,
 				EFC567012C351FBC00E702AD /* ContentTableViewCell.swift in Sources */,
 				EFAC58582C3470B4005975DD /* ListViewController.swift in Sources */,
 				EFAC581E2C33E41F005975DD /* SceneDelegate.swift in Sources */,
