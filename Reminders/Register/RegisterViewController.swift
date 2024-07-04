@@ -133,6 +133,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         switch cellType {
         case .duedate:
             let dueDateVC = DueDateViewController()
+            dueDateVC.delegate = self
             navigationController?.pushViewController(dueDateVC, animated: true)
         case .tag:
             let tagVC = TagViewController()
@@ -143,5 +144,18 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             break
         }
+    }
+}
+
+extension RegisterViewController: PassDueDateDelegate {
+    func passDueDateValue(_ date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        let dateString = dateFormatter.string(from: date)
+        
+        if let cell = registerTableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? ComponentTableViewCell {
+            cell.componentLabel.text = dateString
+        }
+        registerTableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .none)
     }
 }

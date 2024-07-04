@@ -10,6 +10,8 @@ import SnapKit
 
 class DueDateViewController: BaseViewController {
     
+    var delegate: PassDueDateDelegate?
+    
     var datePicker = {
         let picker = UIDatePicker()
         picker.datePickerMode = .date
@@ -20,6 +22,11 @@ class DueDateViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDatePicker()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.passDueDateValue(datePicker.date)
     }
     
     override func configureHierarchy() {
