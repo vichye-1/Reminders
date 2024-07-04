@@ -9,6 +9,10 @@ import UIKit
 import RealmSwift
 import SnapKit
 
+protocol PassDueDateDelegate {
+    func passDueDateValue(_ date: Date)
+}
+
 class RegisterViewController: BaseViewController {
     
     let registerTableView = {
