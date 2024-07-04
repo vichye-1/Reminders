@@ -121,7 +121,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.configureTitle(cellTitle: cellType)
                 return cell
             default:
-                break
+                return UITableViewCell()
             }
         }
         return UITableViewCell()
