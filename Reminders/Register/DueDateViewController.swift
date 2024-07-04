@@ -12,16 +12,21 @@ class DueDateViewController: BaseViewController {
     
     var delegate: PassDueDateDelegate?
     
-    var datePicker = {
+    lazy var datePicker = {
         let picker = UIDatePicker()
         picker.datePickerMode = .date
         picker.preferredDatePickerStyle = .inline
+        picker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         return picker
     }()
 
+    @objc func dateChanged() {
+        delegate?.passDueDateValue(datePicker.date)
+        print(#function, datePicker.date)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureDatePicker()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,8 +46,5 @@ class DueDateViewController: BaseViewController {
     override func configureUI() {
         navigationItem.title = "마감일"
     }
-    
-    func configureDatePicker() {
-        
-    }
+ 
 }

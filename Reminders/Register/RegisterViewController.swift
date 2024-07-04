@@ -15,6 +15,8 @@ protocol PassDueDateDelegate {
 
 class RegisterViewController: BaseViewController {
     
+    var selectedDueDate: Date?
+    
     let registerTableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         return tableView
@@ -114,6 +116,13 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                 let identifier = ComponentTableViewCell.identifier
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
                 cell.configureTitle(cellTitle: cellType)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy.MM.dd"
+                if let date = selectedDueDate {
+                    cell.componentLabel.text = dateFormatter.string(from: date)
+                } else {
+                    cell.componentLabel.text = cellType.title
+                }
                 return cell
             case .tag, .priority, .addImage:
                 let identifier = ComponentTableViewCell.identifier
@@ -163,13 +172,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
 extension RegisterViewController: PassDueDateDelegate {
     func passDueDateValue(_ date: Date) {
         print(#function, date)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        let dateString = dateFormatter.string(from: date)
-        
-        if let cell = registerTableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? ComponentTableViewCell {
-            cell.componentLabel.text = dateString
-        }
-        registerTableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .none)
+        selectedDueDate = date
+        registerTableView.reloadData()
     }
 }
