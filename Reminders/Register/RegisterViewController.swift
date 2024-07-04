@@ -117,7 +117,8 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
                 cell.configureTitle(cellTitle: cellType)
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy.MM.dd"
+                dateFormatter.dateFormat = "yyyy.MM.dd (E)"
+                dateFormatter.locale = Locale(identifier: "ko_KR")
                 if let date = selectedDueDate {
                     cell.componentLabel.text = dateFormatter.string(from: date)
                 } else {
