@@ -93,24 +93,36 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            if indexPath.row == 0 {
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
                 let identifier = TitleTableViewCell.identifier
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TitleTableViewCell
                 return cell
-            } else if indexPath.row == 1 {
+            case 1:
                 let identifier = ContentTableViewCell.identifier
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ContentTableViewCell
                 return cell
+            default:
+                break
             }
-            
-        default:
-            let identifier = ComponentTableViewCell.identifier
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
+        } else {
             let cellType = CellType.allCases[indexPath.section + 1]
-            cell.configureTitle(cellTitle: cellType)
-            return cell
+            
+            switch cellType {
+            case .duedate:
+                let identifier = ComponentTableViewCell.identifier
+                let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
+                cell.configureTitle(cellTitle: cellType)
+                return cell
+            case .tag, .priority, .addImage:
+                let identifier = ComponentTableViewCell.identifier
+                let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
+                cell.configureTitle(cellTitle: cellType)
+                return cell
+            default:
+                break
+            }
         }
         return UITableViewCell()
     }
@@ -134,6 +146,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         case .duedate:
             let dueDateVC = DueDateViewController()
             dueDateVC.delegate = self
+            print("delegate?????????????????")
             navigationController?.pushViewController(dueDateVC, animated: true)
         case .tag:
             let tagVC = TagViewController()
@@ -149,6 +162,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension RegisterViewController: PassDueDateDelegate {
     func passDueDateValue(_ date: Date) {
+        print(#function, date)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
         let dateString = dateFormatter.string(from: date)

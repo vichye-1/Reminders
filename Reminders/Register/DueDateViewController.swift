@@ -27,6 +27,7 @@ class DueDateViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         delegate?.passDueDateValue(datePicker.date)
+        print(#function, datePicker.date)
     }
     
     override func configureHierarchy() {
