@@ -11,23 +11,14 @@ import SnapKit
 class HomeViewController: BaseViewController {
     
     let newReminderButton = {
-        /*
-         var button = UIButton.Configuration.plain()
-         button.image = UIImage(systemName: "plus.circle.fill")
-         button.baseForegroundColor = .systemBlue
-         var attText = AttributedString("새로운 미리 알림")
-         attText.font = UIFont.systemFont(ofSize: 16)
-         button.attributedTitle = attText
-         button.background.cornerRadius = 10
-         button.imagePadding = 10
-         */
         let button = UIButton()
-        button.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
-        button.setTitle("새로운 미리 알림", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.setTitleColor(.blue, for: .highlighted)
-        // button.configuration?.imagePadding = 10
+        var configuration = UIButton.Configuration.plain()
+        configuration.title = "새로운 할 일"
+        configuration.image = UIImage(systemName: "plus.circle.fill")
+        configuration.imagePadding = 4
+        configuration.baseForegroundColor = .systemBlue
+        button.contentHorizontalAlignment = .leading
+        button.configuration = configuration
         return button
     }()
     
@@ -51,12 +42,10 @@ class HomeViewController: BaseViewController {
     
     override func configureConstraints() {
         newReminderButton.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(8)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(34)
             make.width.equalTo(view.snp.width).multipliedBy(0.45)
         }
     }
-    
-    
 }
