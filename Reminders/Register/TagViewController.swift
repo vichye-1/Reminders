@@ -31,8 +31,12 @@ final class TagViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        delegate?.passTag(tagTextField.text ?? "")
-        print(#function, tagTextField.text)
+        var tagText = tagTextField.text ?? ""
+        if !tagText.isEmpty && !tagText.hasPrefix("#") {
+            tagText = "#" + tagText
+        }
+        delegate?.passTag(tagText)
+        print(#function, tagText)
     }
     
     override func configureHierarchy() {
@@ -49,4 +53,6 @@ final class TagViewController: BaseViewController {
     override func configureUI() {
         navigationItem.title = "태그"
     }
+    
+    
 }
