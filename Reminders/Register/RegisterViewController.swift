@@ -12,7 +12,7 @@ import SnapKit
 protocol PassRegisterDetailDelegate {
     func passDueDateValue(_ date: Date)
     func passTag(_ tag: String)
-    func passPriority(_ priority: Priority)
+    func passPriority(_ priority: Priority?)
 }
 
 class RegisterViewController: BaseViewController {
@@ -142,8 +142,8 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                 let identifier = ComponentTableViewCell.identifier
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
                 cell.configureTitle(cellTitle: cellType)
-                if let tag = currentTag {
-                    cell.valueLabel.text = tag
+                if let priority = selectedPriority {
+                    cell.valueLabel.text = priority.title
                 } else {
                     cell.valueLabel.text = nil
                 }
@@ -188,6 +188,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(tagVC, animated: true)
         case .priority:
             let priorityVC = PriorityViewController()
+            priorityVC.delegate = self
             navigationController?.pushViewController(priorityVC, animated: true)
         default:
             break
@@ -196,12 +197,6 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension RegisterViewController: PassRegisterDetailDelegate {
-    func passPriority(_ priority: Priority) {
-        print(#function, priority)
-        selectedPriority = priority
-        registerTableView.reloadData()
-    }
-    
     func passDueDateValue(_ date: Date) {
         print(#function, date)
         selectedDueDate = date
@@ -211,6 +206,12 @@ extension RegisterViewController: PassRegisterDetailDelegate {
     func passTag(_ tag: String) {
         print(#function, tag)
         currentTag = tag
+        registerTableView.reloadData()
+    }
+    
+    func passPriority(_ priority: Priority?) {
+        print(#function, priority ?? "no priority")
+        selectedPriority = priority
         registerTableView.reloadData()
     }
 }

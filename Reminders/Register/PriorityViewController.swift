@@ -10,6 +10,8 @@ import SnapKit
 
 final class PriorityViewController: BaseViewController {
     
+    var delegate: PassRegisterDetailDelegate?
+    
     private let prioritySegment = {
        let segment = UISegmentedControl()
         segment.insertSegment(withTitle: Priority.high.title, at: Priority.high.rawValue, animated: true)
@@ -23,6 +25,15 @@ final class PriorityViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let selectedPriority = Priority(rawValue: prioritySegment.selectedSegmentIndex) {
+            delegate?.passPriority(selectedPriority)
+        } else {
+            delegate?.passPriority(nil)
+        }
     }
     
     override func configureHierarchy() {
