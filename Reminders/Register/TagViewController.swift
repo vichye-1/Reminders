@@ -6,16 +6,36 @@
 //
 
 import UIKit
+import SnapKit
 
 final class TagViewController: BaseViewController {
     
     let tagTextField = {
         let view = UITextField()
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.cornerRadius = 8
+        view.clipsToBounds = true
+        view.placeholder = "태그를 입력해주세요"
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: view.frame.height))
+        view.leftView = paddingView
+        view.leftViewMode = .always
         return view
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func configureHierarchy() {
+        view.addSubview(tagTextField)
+    }
+    
+    override func configureConstraints() {
+        tagTextField.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(16)
+            make.height.equalTo(44)
+        }
     }
     
     override func configureUI() {
