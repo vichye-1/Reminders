@@ -10,7 +10,7 @@ import SnapKit
 
 class ComponentTableViewCell: BaseTableViewCell {
 
-    var componentLabel = {
+    var titleLabel = {
         let label = UILabel()
        label.font = UIFont.systemFont(ofSize: 15)
         return label
@@ -28,11 +28,11 @@ class ComponentTableViewCell: BaseTableViewCell {
     }
 
     override func configureHierarchy() {
-        [componentLabel, chevronImageView].forEach { contentView.addSubview($0) }
+        [titleLabel, chevronImageView].forEach { contentView.addSubview($0) }
     }
     
     override func configureConstraints() {
-        componentLabel.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
             make.leading.equalTo(contentView).offset(16)
         }
@@ -46,6 +46,6 @@ class ComponentTableViewCell: BaseTableViewCell {
     }
     
     func configureTitle(cellTitle: CellType) {
-        componentLabel.text = cellTitle.title
+        titleLabel.text = cellTitle.title
     }
 }

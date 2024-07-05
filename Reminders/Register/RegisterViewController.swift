@@ -120,9 +120,9 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                 dateFormatter.dateFormat = "yyyy.MM.dd (E)"
                 dateFormatter.locale = Locale(identifier: "ko_KR")
                 if let date = selectedDueDate {
-                    cell.componentLabel.text = dateFormatter.string(from: date)
+                    cell.titleLabel.text = dateFormatter.string(from: date)
                 } else {
-                    cell.componentLabel.text = cellType.title
+                    cell.titleLabel.text = cellType.title
                 }
                 return cell
             case .tag, .priority, .addImage:
