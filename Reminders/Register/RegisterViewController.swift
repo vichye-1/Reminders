@@ -122,6 +122,8 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                 dateFormatter.locale = Locale(identifier: "ko_KR")
                 if let date = selectedDueDate {
                     cell.valueLabel.text = dateFormatter.string(from: date)
+                } else {
+                    cell.valueLabel.text = nil
                 }
                 return cell
             case .tag:
@@ -130,6 +132,8 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.configureTitle(cellTitle: cellType)
                 if let tag = currentTag {
                     cell.valueLabel.text = tag
+                } else {
+                    cell.valueLabel.text = nil
                 }
                 return cell
             case .priority, .addImage:
