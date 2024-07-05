@@ -11,11 +11,13 @@ import SnapKit
 
 protocol PassDueDateDelegate {
     func passDueDateValue(_ date: Date)
+    func passTag(_ tag: String)
 }
 
 class RegisterViewController: BaseViewController {
     
     var selectedDueDate: Date?
+    var currentTag: String?
     
     let registerTableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -176,6 +178,12 @@ extension RegisterViewController: PassDueDateDelegate {
     func passDueDateValue(_ date: Date) {
         print(#function, date)
         selectedDueDate = date
+        registerTableView.reloadData()
+    }
+    
+    func passTag(_ tag: String) {
+        print(#function, tag)
+        currentTag = tag
         registerTableView.reloadData()
     }
 }

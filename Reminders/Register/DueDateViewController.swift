@@ -16,14 +16,8 @@ final class DueDateViewController: BaseViewController {
         let picker = UIDatePicker()
         picker.datePickerMode = .date
         picker.preferredDatePickerStyle = .inline
-        picker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         return picker
     }()
-
-    @objc private func dateChanged() {
-        delegate?.passDueDateValue(datePicker.date)
-        print(#function, datePicker.date)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
