@@ -10,11 +10,28 @@ import SnapKit
 
 final class PriorityViewController: BaseViewController {
     
+    private enum Priority: Int {
+        case high = 0
+        case medium = 1
+        case low = 2
+        
+        var title: String {
+            switch self {
+            case .high:
+                return "높음"
+            case .medium:
+                return "보통"
+            case .low:
+                return "낮음"
+            }
+        }
+    }
+    
     private let prioritySegment = {
        let segment = UISegmentedControl()
-        segment.insertSegment(withTitle: "높음", at: 0, animated: true)
-        segment.insertSegment(withTitle: "보통", at: 1, animated: true)
-        segment.insertSegment(withTitle: "낮음", at: 2, animated: true)
+        segment.insertSegment(withTitle: Priority.high.title, at: Priority.high.rawValue, animated: true)
+        segment.insertSegment(withTitle: Priority.medium.title, at: Priority.medium.rawValue, animated: true)
+        segment.insertSegment(withTitle: Priority.low.title, at: Priority.low.rawValue, animated: true)
         segment.setTitleTextAttributes([
                 NSAttributedString.Key.foregroundColor: UIColor.black,
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)], for: .normal)
