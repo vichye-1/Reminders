@@ -16,6 +16,14 @@ class ComponentTableViewCell: BaseTableViewCell {
         return label
     }()
     
+    var valueLabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.text = "test"
+        label.textAlignment = .right
+        return label
+    }()
+    
     var chevronImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "chevron.forward")
@@ -28,13 +36,19 @@ class ComponentTableViewCell: BaseTableViewCell {
     }
 
     override func configureHierarchy() {
-        [titleLabel, chevronImageView].forEach { contentView.addSubview($0) }
+        [titleLabel, valueLabel, chevronImageView].forEach { contentView.addSubview($0) }
     }
     
     override func configureConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
             make.leading.equalTo(contentView).offset(16)
+        }
+        
+        valueLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(contentView)
+            make.trailing.equalTo(chevronImageView.snp.leading).offset(-16)
+            make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(16)
         }
         
         chevronImageView.snp.makeConstraints { make in
