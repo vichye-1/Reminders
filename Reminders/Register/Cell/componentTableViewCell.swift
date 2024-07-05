@@ -9,17 +9,17 @@ import UIKit
 import SnapKit
 
 class ComponentTableViewCell: BaseTableViewCell {
-
+    
     var titleLabel = {
         let label = UILabel()
-       label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 15)
         return label
     }()
     
     var valueLabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)
-        label.text = "test"
+        //label.text = "test"
         label.textAlignment = .right
         return label
     }()
@@ -34,7 +34,7 @@ class ComponentTableViewCell: BaseTableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
-
+    
     override func configureHierarchy() {
         [titleLabel, valueLabel, chevronImageView].forEach { contentView.addSubview($0) }
     }
