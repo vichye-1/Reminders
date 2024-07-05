@@ -12,13 +12,14 @@ import SnapKit
 protocol PassRegisterDetailDelegate {
     func passDueDateValue(_ date: Date)
     func passTag(_ tag: String)
-    
+    func passPriority(_ priority: Priority)
 }
 
 class RegisterViewController: BaseViewController {
     
     var selectedDueDate: Date?
     var currentTag: String?
+    var selectedPriority: Priority?
     
     let registerTableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -195,6 +196,12 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension RegisterViewController: PassRegisterDetailDelegate {
+    func passPriority(_ priority: Priority) {
+        print(#function, priority)
+        selectedPriority = priority
+        registerTableView.reloadData()
+    }
+    
     func passDueDateValue(_ date: Date) {
         print(#function, date)
         selectedDueDate = date

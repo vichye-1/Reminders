@@ -10,23 +10,6 @@ import SnapKit
 
 final class PriorityViewController: BaseViewController {
     
-    private enum Priority: Int {
-        case high = 0
-        case medium = 1
-        case low = 2
-        
-        var title: String {
-            switch self {
-            case .high:
-                return "높음"
-            case .medium:
-                return "보통"
-            case .low:
-                return "낮음"
-            }
-        }
-    }
-    
     private let prioritySegment = {
        let segment = UISegmentedControl()
         segment.insertSegment(withTitle: Priority.high.title, at: Priority.high.rawValue, animated: true)

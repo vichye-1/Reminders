@@ -31,6 +31,7 @@
 		EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567052C35339300E702AD /* DueDateViewController.swift */; };
 		EFC567082C3587A900E702AD /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567072C3587A900E702AD /* TagViewController.swift */; };
 		EFC5670A2C35886B00E702AD /* PriorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567092C35886B00E702AD /* PriorityViewController.swift */; };
+		EFC567122C3837A900E702AD /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567112C3837A900E702AD /* Priority.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		EFC567052C35339300E702AD /* DueDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueDateViewController.swift; sourceTree = "<group>"; };
 		EFC567072C3587A900E702AD /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		EFC567092C35886B00E702AD /* PriorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityViewController.swift; sourceTree = "<group>"; };
+		EFC567112C3837A900E702AD /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				EFAC584E2C345A47005975DD /* CellType.swift */,
+				EFC567112C3837A900E702AD /* Priority.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC567122C3837A900E702AD /* Priority.swift in Sources */,
 				EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */,
 				EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */,
 				EFAC584F2C345A47005975DD /* CellType.swift in Sources */,
