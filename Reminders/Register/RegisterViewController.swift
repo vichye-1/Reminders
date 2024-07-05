@@ -110,7 +110,6 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
             }
         } else {
             let cellType = CellType.allCases[indexPath.section + 1]
-            
             switch cellType {
             case .duedate:
                 let identifier = ComponentTableViewCell.identifier
@@ -123,7 +122,12 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.valueLabel.text = dateFormatter.string(from: date)
                 }
                 return cell
-            case .tag, .priority, .addImage:
+            case .tag:
+                let identifier = ComponentTableViewCell.identifier
+                let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
+                cell.configureTitle(cellTitle: cellType)
+                return cell
+            case .priority, .addImage:
                 let identifier = ComponentTableViewCell.identifier
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
                 cell.configureTitle(cellTitle: cellType)
