@@ -7,7 +7,13 @@
 
 import UIKit
 
-class TagViewController: BaseViewController {
+final class TagViewController: BaseViewController {
+    
+    let tagTextField = {
+        let view = UITextField()
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

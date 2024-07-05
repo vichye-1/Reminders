@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class DueDateViewController: BaseViewController {
+final class DueDateViewController: BaseViewController {
     
     var delegate: PassDueDateDelegate?
     
@@ -20,7 +20,7 @@ class DueDateViewController: BaseViewController {
         return picker
     }()
 
-    @objc func dateChanged() {
+    @objc private func dateChanged() {
         delegate?.passDueDateValue(datePicker.date)
         print(#function, datePicker.date)
     }
