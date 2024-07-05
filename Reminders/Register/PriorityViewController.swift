@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-class PriorityViewController: BaseViewController {
+final class PriorityViewController: BaseViewController {
     
-    let prioritySegment = {
+    private let prioritySegment = {
        let segment = UISegmentedControl()
         segment.insertSegment(withTitle: "높음", at: 0, animated: true)
         segment.insertSegment(withTitle: "보통", at: 1, animated: true)

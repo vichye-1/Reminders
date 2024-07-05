@@ -12,6 +12,7 @@ import SnapKit
 protocol PassRegisterDetailDelegate {
     func passDueDateValue(_ date: Date)
     func passTag(_ tag: String)
+    
 }
 
 class RegisterViewController: BaseViewController {
