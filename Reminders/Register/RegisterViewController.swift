@@ -136,7 +136,17 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.valueLabel.text = nil
                 }
                 return cell
-            case .priority, .addImage:
+            case .priority:
+                let identifier = ComponentTableViewCell.identifier
+                let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
+                cell.configureTitle(cellTitle: cellType)
+                if let tag = currentTag {
+                    cell.valueLabel.text = tag
+                } else {
+                    cell.valueLabel.text = nil
+                }
+                return cell
+            case .addImage:
                 let identifier = ComponentTableViewCell.identifier
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
                 cell.configureTitle(cellTitle: cellType)
