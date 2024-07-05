@@ -10,8 +10,6 @@ import SnapKit
 
 class ComponentTableViewCell: BaseTableViewCell {
     
-    var delegate: PassDueDateDelegate?
-    
     var titleLabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)

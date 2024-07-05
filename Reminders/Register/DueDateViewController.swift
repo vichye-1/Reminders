@@ -10,7 +10,7 @@ import SnapKit
 
 final class DueDateViewController: BaseViewController {
     
-    var delegate: PassDueDateDelegate?
+    var delegate: PassRegisterDetailDelegate?
     
     lazy var datePicker = {
         let picker = UIDatePicker()
@@ -40,5 +40,4 @@ final class DueDateViewController: BaseViewController {
     override func configureUI() {
         navigationItem.title = "마감일"
     }
- 
 }

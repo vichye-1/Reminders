@@ -10,6 +10,8 @@ import SnapKit
 
 final class TagViewController: BaseViewController {
     
+    var delegate: PassRegisterDetailDelegate?
+    
     let tagTextField = {
         let view = UITextField()
         view.layer.borderWidth = 1
@@ -25,6 +27,12 @@ final class TagViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.passTag(tagTextField.text ?? "")
+        print(#function, tagTextField.text)
     }
     
     override func configureHierarchy() {

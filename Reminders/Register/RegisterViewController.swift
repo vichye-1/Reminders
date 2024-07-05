@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 import SnapKit
 
-protocol PassDueDateDelegate {
+protocol PassRegisterDetailDelegate {
     func passDueDateValue(_ date: Date)
     func passTag(_ tag: String)
 }
@@ -128,6 +128,9 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                 let identifier = ComponentTableViewCell.identifier
                 let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
                 cell.configureTitle(cellTitle: cellType)
+                if let tag = currentTag {
+                    cell.valueLabel.text = tag
+                }
                 return cell
             case .priority, .addImage:
                 let identifier = ComponentTableViewCell.identifier
@@ -160,10 +163,12 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
         case .duedate:
             let dueDateVC = DueDateViewController()
             dueDateVC.delegate = self
-            print("delegate?????????????????")
+            print("duedate delegate?????????????????")
             navigationController?.pushViewController(dueDateVC, animated: true)
         case .tag:
             let tagVC = TagViewController()
+            tagVC.delegate = self
+            print("tag delegate??????????")
             navigationController?.pushViewController(tagVC, animated: true)
         case .priority:
             let priorityVC = PriorityViewController()
@@ -174,7 +179,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension RegisterViewController: PassDueDateDelegate {
+extension RegisterViewController: PassRegisterDetailDelegate {
     func passDueDateValue(_ date: Date) {
         print(#function, date)
         selectedDueDate = date
