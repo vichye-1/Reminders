@@ -33,6 +33,7 @@
 		EFC5670A2C35886B00E702AD /* PriorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567092C35886B00E702AD /* PriorityViewController.swift */; };
 		EFC567122C3837A900E702AD /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567112C3837A900E702AD /* Priority.swift */; };
 		EFC567142C3930DF00E702AD /* AddImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567132C3930DF00E702AD /* AddImageTableViewCell.swift */; };
+		EFC567162C39388B00E702AD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EFC567152C39388B00E702AD /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		EFC567092C35886B00E702AD /* PriorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityViewController.swift; sourceTree = "<group>"; };
 		EFC567112C3837A900E702AD /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		EFC567132C3930DF00E702AD /* AddImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageTableViewCell.swift; sourceTree = "<group>"; };
+		EFC567152C39388B00E702AD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		EFAC580F2C33E41F005975DD = {
 			isa = PBXGroup;
 			children = (
+				EFC567152C39388B00E702AD /* .gitignore */,
 				EFAC581A2C33E41F005975DD /* Reminders */,
 				EFAC58192C33E41F005975DD /* Products */,
 			);
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFAC58252C33E421005975DD /* Assets.xcassets in Resources */,
+				EFC567162C39388B00E702AD /* .gitignore in Resources */,
 				EFAC58282C33E421005975DD /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
