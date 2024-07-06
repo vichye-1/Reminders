@@ -26,12 +26,13 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
     override func configureConstraints() {
         iconImageView.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().offset(8)
-            make.width.height.equalTo(contentView.snp.height).multipliedBy(0.5)
+            make.width.height.equalTo(contentView.snp.height).multipliedBy(0.4)
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         iconImageView.layer.cornerRadius = iconImageView.frame.width / 2
+        contentView.backgroundColor = .brown
     }
 }

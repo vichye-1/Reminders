@@ -70,13 +70,41 @@ final class HomeViewController: BaseViewController {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    private enum LayoutConstans {
+        static let totalCells = 5
+        static let cellSpacing: CGFloat = 10
+        static let cellInset: CGFloat = 8
+        static let numberOfColumns: CGFloat = 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return LayoutConstans.totalCells
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! HomeCollectionViewCell
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let totalSpacing = LayoutConstans.cellSpacing * (LayoutConstans.numberOfColumns - 1)
+        let totalInset = LayoutConstans.cellInset * 2
+        let availableWidth = collectionView.bounds.width - totalSpacing - totalInset
+        let width = availableWidth / LayoutConstans.numberOfColumns
+        return CGSize(width: width, height: width * 0.6)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return LayoutConstans.cellSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return LayoutConstans.cellSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: LayoutConstans.cellInset, bottom: 0, right: LayoutConstans.cellInset)
     }
 }
