@@ -10,6 +10,14 @@ import SnapKit
 
 final class HomeViewController: BaseViewController {
     
+    private let homeCollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .yellow
+        return cv
+    }()
+    
     private let newReminderButton = {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
@@ -35,12 +43,17 @@ final class HomeViewController: BaseViewController {
     }
     
     override func configureHierarchy() {
-        [newReminderButton].forEach {
+        [homeCollectionView, newReminderButton].forEach {
             view.addSubview($0)
         }
     }
     
     override func configureConstraints() {
+        homeCollectionView.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalTo(newReminderButton.snp.top)
+        }
+        
         newReminderButton.snp.makeConstraints { make in
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(8)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
