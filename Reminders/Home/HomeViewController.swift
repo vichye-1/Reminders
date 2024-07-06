@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
     
-    let newReminderButton = {
+    private let newReminderButton = {
         let button = UIButton()
         var configuration = UIButton.Configuration.plain()
         configuration.title = "새로운 할 일"
