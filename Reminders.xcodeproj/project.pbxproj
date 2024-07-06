@@ -34,6 +34,7 @@
 		EFC567122C3837A900E702AD /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567112C3837A900E702AD /* Priority.swift */; };
 		EFC567142C3930DF00E702AD /* AddImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567132C3930DF00E702AD /* AddImageTableViewCell.swift */; };
 		EFC567162C39388B00E702AD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EFC567152C39388B00E702AD /* .gitignore */; };
+		EFC567192C398FA400E702AD /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567182C398FA400E702AD /* HomeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		EFC567112C3837A900E702AD /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		EFC567132C3930DF00E702AD /* AddImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageTableViewCell.swift; sourceTree = "<group>"; };
 		EFC567152C39388B00E702AD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		EFC567182C398FA400E702AD /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		EFAC58522C3469CE005975DD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EFC567172C398F7E00E702AD /* Cell */,
 				EFAC581F2C33E41F005975DD /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -196,6 +199,14 @@
 				EFAC58572C3470B4005975DD /* ListViewController.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		EFC567172C398F7E00E702AD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EFC567182C398FA400E702AD /* HomeCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +306,7 @@
 				EFAC58512C345ADC005975DD /* BaseTableViewCell.swift in Sources */,
 				EFAC58442C3456E6005975DD /* UIViewController+.swift in Sources */,
 				EFAC58312C33E5B6005975DD /* BaseViewController.swift in Sources */,
+				EFC567192C398FA400E702AD /* HomeCollectionViewCell.swift in Sources */,
 				EFAC581C2C33E41F005975DD /* AppDelegate.swift in Sources */,
 				EFAC584C2C3458DD005975DD /* TitleTableViewCell.swift in Sources */,
 				EFC5670A2C35886B00E702AD /* PriorityViewController.swift in Sources */,
