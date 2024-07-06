@@ -19,6 +19,7 @@ class AddImageTableViewCell: BaseTableViewCell {
     var userImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
+        view.clipsToBounds = true
         return view
     }()
     
@@ -46,7 +47,8 @@ class AddImageTableViewCell: BaseTableViewCell {
         userImageView.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
             make.trailing.equalTo(chevronImageView.snp.leading).offset(-16)
-            make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(16)
+            make.height.equalTo(contentView.snp.height).multipliedBy(0.8)
+            make.width.equalTo(userImageView.snp.height).multipliedBy(1.5)
         }
         
         chevronImageView.snp.makeConstraints { make in
