@@ -10,11 +10,12 @@ import SnapKit
 
 final class HomeViewController: BaseViewController {
     
+    private let identifier = HomeCollectionViewCell.identifier
+    
     private let homeCollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .yellow
         return cv
     }()
     
@@ -60,5 +61,22 @@ final class HomeViewController: BaseViewController {
             make.height.equalTo(34)
             make.width.equalTo(view.snp.width).multipliedBy(0.45)
         }
+    }
+    
+    override func configureCollectionView() {
+        homeCollectionView.delegate = self
+        homeCollectionView.dataSource = self
+        homeCollectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: identifier)
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! HomeCollectionViewCell
+        return cell
     }
 }
