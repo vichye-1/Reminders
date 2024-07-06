@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 import RealmSwift
 import SnapKit
 
@@ -20,6 +21,7 @@ class RegisterViewController: BaseViewController {
     var selectedDueDate: Date?
     var currentTag: String?
     var selectedPriority: Priority?
+    var selectedImage: UIImage?
     
     let registerTableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -76,11 +78,13 @@ class RegisterViewController: BaseViewController {
         let titleIdentifier = TitleTableViewCell.identifier
         let contentIdenfier = ContentTableViewCell.identifier
         let componentIdentifier = ComponentTableViewCell.identifier
+        let addImageIdentifier = AddImageTableViewCell.identifier
         registerTableView.delegate = self
         registerTableView.dataSource = self
         registerTableView.register(TitleTableViewCell.self, forCellReuseIdentifier: titleIdentifier)
         registerTableView.register(ContentTableViewCell.self, forCellReuseIdentifier: contentIdenfier)
         registerTableView.register(ComponentTableViewCell.self, forCellReuseIdentifier: componentIdentifier)
+        registerTableView.register(AddImageTableViewCell.self, forCellReuseIdentifier: addImageIdentifier)
     }
 }
 
@@ -149,9 +153,12 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                 return cell
             case .addImage:
-                let identifier = ComponentTableViewCell.identifier
-                let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ComponentTableViewCell
+                let identifier = AddImageTableViewCell.identifier
+                let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! AddImageTableViewCell
                 cell.configureTitle(cellTitle: cellType)
+                if let image = selectedImage {
+                    cell.userImageView.image = image
+                }
                 return cell
             default:
                 return UITableViewCell()
@@ -190,6 +197,13 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
             let priorityVC = PriorityViewController()
             priorityVC.delegate = self
             navigationController?.pushViewController(priorityVC, animated: true)
+        case .addImage:
+            var configuration = PHPickerConfiguration()
+            configuration.selectionLimit = 3
+            configuration.filter = .any(of: [.screenshots, .images, .livePhotos])
+            let picker = PHPickerViewController(configuration: configuration)
+            picker.delegate = self
+            present(picker, animated: true)
         default:
             break
         }
@@ -213,5 +227,22 @@ extension RegisterViewController: PassRegisterDetailDelegate {
         print(#function, priority ?? "no priority")
         selectedPriority = priority
         registerTableView.reloadData()
+    }
+}
+
+extension RegisterViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        print(#function)
+        picker.dismiss(animated: true)
+        print("1", Thread.isMainThread)
+        if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { image, error in
+                print("2", Thread.isMainThread)
+                DispatchQueue.main.async {
+                    self.selectedImage = image as? UIImage
+                    self.registerTableView.reloadData()
+                }
+            }
+        }
     }
 }

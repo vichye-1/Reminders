@@ -27,11 +27,12 @@
 		EFAC58552C346A51005975DD /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58542C346A51005975DD /* ReminderModel.swift */; };
 		EFAC58582C3470B4005975DD /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58572C3470B4005975DD /* ListViewController.swift */; };
 		EFC567012C351FBC00E702AD /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */; };
-		EFC567032C35259100E702AD /* componentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567022C35259100E702AD /* componentTableViewCell.swift */; };
+		EFC567032C35259100E702AD /* ComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567022C35259100E702AD /* ComponentTableViewCell.swift */; };
 		EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567052C35339300E702AD /* DueDateViewController.swift */; };
 		EFC567082C3587A900E702AD /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567072C3587A900E702AD /* TagViewController.swift */; };
 		EFC5670A2C35886B00E702AD /* PriorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567092C35886B00E702AD /* PriorityViewController.swift */; };
 		EFC567122C3837A900E702AD /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567112C3837A900E702AD /* Priority.swift */; };
+		EFC567142C3930DF00E702AD /* AddImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567132C3930DF00E702AD /* AddImageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,11 +54,12 @@
 		EFAC58542C346A51005975DD /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
 		EFAC58572C3470B4005975DD /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
-		EFC567022C35259100E702AD /* componentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = componentTableViewCell.swift; sourceTree = "<group>"; };
+		EFC567022C35259100E702AD /* ComponentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTableViewCell.swift; sourceTree = "<group>"; };
 		EFC567052C35339300E702AD /* DueDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueDateViewController.swift; sourceTree = "<group>"; };
 		EFC567072C3587A900E702AD /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		EFC567092C35886B00E702AD /* PriorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityViewController.swift; sourceTree = "<group>"; };
 		EFC567112C3837A900E702AD /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
+		EFC567132C3930DF00E702AD /* AddImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +156,8 @@
 			children = (
 				EFAC584B2C3458DD005975DD /* TitleTableViewCell.swift */,
 				EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */,
-				EFC567022C35259100E702AD /* componentTableViewCell.swift */,
+				EFC567022C35259100E702AD /* ComponentTableViewCell.swift */,
+				EFC567132C3930DF00E702AD /* AddImageTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -279,10 +282,11 @@
 				EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */,
 				EFAC584F2C345A47005975DD /* CellType.swift in Sources */,
 				EFC567082C3587A900E702AD /* TagViewController.swift in Sources */,
+				EFC567142C3930DF00E702AD /* AddImageTableViewCell.swift in Sources */,
 				EFAC58492C345754005975DD /* ReuseIdentifierProtocol.swift in Sources */,
 				EFAC58402C33EE37005975DD /* RegisterViewController.swift in Sources */,
 				EFAC58462C3456FF005975DD /* UIView+.swift in Sources */,
-				EFC567032C35259100E702AD /* componentTableViewCell.swift in Sources */,
+				EFC567032C35259100E702AD /* ComponentTableViewCell.swift in Sources */,
 				EFAC58552C346A51005975DD /* ReminderModel.swift in Sources */,
 				EFAC58512C345ADC005975DD /* BaseTableViewCell.swift in Sources */,
 				EFAC58442C3456E6005975DD /* UIViewController+.swift in Sources */,
