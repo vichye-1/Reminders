@@ -17,8 +17,17 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         return imageview
     }()
     
+    private let componentLabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 15)
+        label.backgroundColor = .systemYellow
+        return label
+    }()
+    
     override func configureHierarchy() {
-        [iconImageView].forEach {
+        [iconImageView, componentLabel].forEach {
             contentView.addSubview($0)
         }
     }
@@ -27,6 +36,12 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         iconImageView.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().offset(8)
             make.width.height.equalTo(contentView.snp.height).multipliedBy(0.4)
+        }
+        
+        componentLabel.snp.makeConstraints { make in
+            make.top.equalTo(iconImageView.snp.bottom).offset(16)
+            make.horizontalEdges.equalTo(contentView).inset(8)
+            make.bottom.equalTo(contentView).inset(8)
         }
     }
     
