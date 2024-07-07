@@ -17,7 +17,6 @@ protocol PassRegisterDetailDelegate {
 }
 
 class RegisterViewController: BaseViewController {
-    
     var selectedDueDate: Date?
     var currentTag: String?
     var selectedPriority: Priority?
@@ -58,19 +57,19 @@ class RegisterViewController: BaseViewController {
     private func addButtonClicked() {
         print(#function)
         let realm = try! Realm()
-        guard let titleCell = registerTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TitleTableViewCell else {
-            print("toast message")
+        guard let titleCell = registerTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TitleTableViewCell,
+              let contentCell = registerTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? ContentTableViewCell
+        else {
+            print("failed toast message")
             return
         }
+        
         let title = titleCell.titleTextView.text ?? ""
+        let content = contentCell.contentTextView.text ?? ""
+        let reminder = ReminderTable(reminderTitle: title, content: content, dueDate: selectedDueDate ?? Date(), tag: currentTag, priority: selectedPriority?.title)
         
-        let reminder = ReminderTable(reminderTitle: title, dueDate: Date())
-        reminder.reminderTitle = title
-        
-        try! realm.write {
-            realm.add(reminder)
-            print("reminder saved successfully")
-        }
+        let repository = ReminderRepository()
+        repository.createReminder(reminder)
         dismiss(animated: true)
     }
     
@@ -234,10 +233,8 @@ extension RegisterViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         print(#function)
         picker.dismiss(animated: true)
-        print("1", Thread.isMainThread)
         if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
             itemProvider.loadObject(ofClass: UIImage.self) { image, error in
-                print("2", Thread.isMainThread)
                 DispatchQueue.main.async {
                     self.selectedImage = image as? UIImage
                     self.registerTableView.reloadData()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EF9C2F6F2C3B535700A35DE1 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2F6E2C3B535700A35DE1 /* TaskListViewController.swift */; };
+		EF9C2F712C3B588800A35DE1 /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2F702C3B588800A35DE1 /* ReminderRepository.swift */; };
 		EFAC581C2C33E41F005975DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581B2C33E41F005975DD /* AppDelegate.swift */; };
 		EFAC581E2C33E41F005975DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581D2C33E41F005975DD /* SceneDelegate.swift */; };
 		EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581F2C33E41F005975DD /* HomeViewController.swift */; };
@@ -26,7 +27,6 @@
 		EFAC584F2C345A47005975DD /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC584E2C345A47005975DD /* CellType.swift */; };
 		EFAC58512C345ADC005975DD /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58502C345ADC005975DD /* BaseTableViewCell.swift */; };
 		EFAC58552C346A51005975DD /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58542C346A51005975DD /* ReminderModel.swift */; };
-		EFAC58582C3470B4005975DD /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58572C3470B4005975DD /* ListViewController.swift */; };
 		EFC567012C351FBC00E702AD /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */; };
 		EFC567032C35259100E702AD /* ComponentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567022C35259100E702AD /* ComponentTableViewCell.swift */; };
 		EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567052C35339300E702AD /* DueDateViewController.swift */; };
@@ -41,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		EF9C2F6E2C3B535700A35DE1 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		EF9C2F702C3B588800A35DE1 /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
 		EFAC58182C33E41F005975DD /* Reminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAC581B2C33E41F005975DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFAC581D2C33E41F005975DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		EFAC584E2C345A47005975DD /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
 		EFAC58502C345ADC005975DD /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		EFAC58542C346A51005975DD /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
-		EFAC58572C3470B4005975DD /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		EFC567002C351FBC00E702AD /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
 		EFC567022C35259100E702AD /* ComponentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTableViewCell.swift; sourceTree = "<group>"; };
 		EFC567052C35339300E702AD /* DueDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueDateViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				EF9C2F6D2C3B534200A35DE1 /* TaskList */,
-				EFAC58562C34709A005975DD /* List */,
 				EFAC58532C346A31005975DD /* Database */,
 				EFAC58522C3469CE005975DD /* Home */,
 				EFAC583E2C33EE13005975DD /* Register */,
@@ -203,16 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				EFAC58542C346A51005975DD /* ReminderModel.swift */,
+				EF9C2F702C3B588800A35DE1 /* ReminderRepository.swift */,
 			);
 			path = Database;
-			sourceTree = "<group>";
-		};
-		EFAC58562C34709A005975DD /* List */ = {
-			isa = PBXGroup;
-			children = (
-				EFAC58572C3470B4005975DD /* ListViewController.swift */,
-			);
-			path = List;
 			sourceTree = "<group>";
 		};
 		EFC567172C398F7E00E702AD /* Cell */ = {
@@ -307,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFC567122C3837A900E702AD /* Priority.swift in Sources */,
+				EF9C2F712C3B588800A35DE1 /* ReminderRepository.swift in Sources */,
 				EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */,
 				EF9C2F6F2C3B535700A35DE1 /* TaskListViewController.swift in Sources */,
 				EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */,
@@ -327,7 +320,6 @@
 				EFAC584C2C3458DD005975DD /* TitleTableViewCell.swift in Sources */,
 				EFC5670A2C35886B00E702AD /* PriorityViewController.swift in Sources */,
 				EFC567012C351FBC00E702AD /* ContentTableViewCell.swift in Sources */,
-				EFAC58582C3470B4005975DD /* ListViewController.swift in Sources */,
 				EFAC581E2C33E41F005975DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
