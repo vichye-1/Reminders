@@ -76,8 +76,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     private enum LayoutConstans {
         static let totalCells = 5
-        static let cellSpacing: CGFloat = 10
-        static let cellInset: CGFloat = 8
+        static let cellSpacing: CGFloat = 16
+        static let cellInset: CGFloat = 10
         static let numberOfColumns: CGFloat = 2
     }
     
