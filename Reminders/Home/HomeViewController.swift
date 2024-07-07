@@ -12,6 +12,59 @@ final class HomeViewController: BaseViewController {
     
     private let identifier = HomeCollectionViewCell.identifier
     
+    private enum CellType: CaseIterable {
+        case today
+        case scheduled
+        case all
+        case flagged
+        case completed
+        
+        var title: String {
+            switch self {
+            case .today:
+                return "오늘"
+            case .scheduled:
+                return "예정"
+            case .all:
+                return "전체"
+            case .flagged:
+                return "깃발 표시"
+            case .completed:
+                return "완료됨"
+            }
+        }
+        
+        var iconName: String {
+            switch self {
+            case .today:
+                return "calendar"
+            case .scheduled:
+                return "calendar.circle.fill"
+            case .all:
+                return "tray.fill"
+            case .flagged:
+                return "flag.fill"
+            case .completed:
+                return "checkmark.circle.fill"
+            }
+        }
+        
+        var color: UIColor {
+            switch self {
+            case .today:
+                return .systemBlue
+            case .scheduled:
+                return .systemRed
+            case .all:
+                return .black
+            case .flagged:
+                return .systemOrange
+            case .completed:
+                return .systemGray
+            }
+        }
+    }
+    
     private let homeCollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -75,7 +128,7 @@ final class HomeViewController: BaseViewController {
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     private enum LayoutConstans {
-        static let totalCells = 5
+        static let totalCells = CellType.allCases.count
         static let cellSpacing: CGFloat = 16
         static let cellInset: CGFloat = 10
         static let numberOfColumns: CGFloat = 2
@@ -87,6 +140,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! HomeCollectionViewCell
+        let cellTypeData = CellType.allCases[indexPath.item]
+        cell.componentLabel.text = cellTypeData.title
+        cell.iconImageView.image = UIImage(systemName: cellTypeData.iconName)
+        cell.iconImageView.tintColor = cellTypeData.color
         return cell
     }
     

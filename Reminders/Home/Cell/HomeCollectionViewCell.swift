@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class HomeCollectionViewCell: BaseCollectionViewCell {
-    private let iconImageView = {
+    let iconImageView = {
         let imageview = UIImageView()
         imageview.contentMode = .scaleAspectFit
         imageview.clipsToBounds = true
@@ -17,7 +17,7 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         return imageview
     }()
     
-    private let componentLabel = {
+    let componentLabel = {
         let label = UILabel()
         label.textColor = .gray
         label.textAlignment = .left
@@ -27,7 +27,7 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
     
-    private let countLabel = {
+    let countLabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = .boldSystemFont(ofSize: 20)
