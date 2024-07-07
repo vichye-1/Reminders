@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF9C2F6F2C3B535700A35DE1 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2F6E2C3B535700A35DE1 /* TaskListViewController.swift */; };
 		EFAC581C2C33E41F005975DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581B2C33E41F005975DD /* AppDelegate.swift */; };
 		EFAC581E2C33E41F005975DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581D2C33E41F005975DD /* SceneDelegate.swift */; };
 		EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581F2C33E41F005975DD /* HomeViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF9C2F6E2C3B535700A35DE1 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		EFAC58182C33E41F005975DD /* Reminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAC581B2C33E41F005975DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFAC581D2C33E41F005975DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF9C2F6D2C3B534200A35DE1 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				EF9C2F6E2C3B535700A35DE1 /* TaskListViewController.swift */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
 		EFAC580F2C33E41F005975DD = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		EFAC581A2C33E41F005975DD /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				EF9C2F6D2C3B534200A35DE1 /* TaskList */,
 				EFAC58562C34709A005975DD /* List */,
 				EFAC58532C346A31005975DD /* Database */,
 				EFAC58522C3469CE005975DD /* Home */,
@@ -297,6 +308,7 @@
 			files = (
 				EFC567122C3837A900E702AD /* Priority.swift in Sources */,
 				EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */,
+				EF9C2F6F2C3B535700A35DE1 /* TaskListViewController.swift in Sources */,
 				EFC567062C35339300E702AD /* DueDateViewController.swift in Sources */,
 				EFAC584F2C345A47005975DD /* CellType.swift in Sources */,
 				EFC567082C3587A900E702AD /* TagViewController.swift in Sources */,
