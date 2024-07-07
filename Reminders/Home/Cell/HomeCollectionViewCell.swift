@@ -21,13 +21,24 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         let label = UILabel()
         label.textColor = .gray
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 16)
         label.backgroundColor = .systemYellow
+        label.text = "오늘"
+        return label
+    }()
+    
+    private let countLabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .boldSystemFont(ofSize: 20)
+        label.text = "8"
+        label.textAlignment = .center
+        label.backgroundColor = .darkGray
         return label
     }()
     
     override func configureHierarchy() {
-        [iconImageView, componentLabel].forEach {
+        [iconImageView, componentLabel, countLabel].forEach {
             contentView.addSubview($0)
         }
     }
@@ -42,6 +53,12 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
             make.top.equalTo(iconImageView.snp.bottom).offset(16)
             make.horizontalEdges.equalTo(contentView).inset(8)
             make.bottom.equalTo(contentView).inset(8)
+        }
+        
+        countLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(8)
+            make.trailing.equalToSuperview().inset(8)
+            make.width.height.equalTo(iconImageView.snp.width)
         }
     }
     
