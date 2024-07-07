@@ -168,6 +168,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        <#code#>
+        let taskListVC = TaskListViewController()
+        navigationController?.pushViewController(taskListVC, animated: true)
     }
 }
