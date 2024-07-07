@@ -62,9 +62,10 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        iconImageView.layer.cornerRadius = iconImageView.frame.width / 2
+    override func configureUI() {
+        DispatchQueue.main.async {
+            self.iconImageView.layer.cornerRadius = self.iconImageView.frame.width / 2
+        }
         contentView.backgroundColor = .brown
     }
 }
