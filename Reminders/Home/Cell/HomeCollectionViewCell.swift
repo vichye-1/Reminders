@@ -13,7 +13,6 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         let imageview = UIImageView()
         imageview.contentMode = .scaleAspectFit
         imageview.clipsToBounds = true
-        imageview.backgroundColor = .systemMint
         return imageview
     }()
     
@@ -22,7 +21,6 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         label.textColor = .gray
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 16)
-        label.backgroundColor = .systemYellow
         label.text = "오늘"
         return label
     }()
@@ -33,7 +31,6 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         label.font = .boldSystemFont(ofSize: 20)
         label.text = "8"
         label.textAlignment = .center
-        label.backgroundColor = .darkGray
         return label
     }()
     
