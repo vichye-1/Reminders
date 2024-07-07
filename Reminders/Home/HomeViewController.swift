@@ -16,6 +16,8 @@ final class HomeViewController: BaseViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let uiColor = UIColor(red: 243 / 255, green: 242 / 255, blue: 247 / 255, alpha: 1.0)
+        cv.backgroundColor = uiColor
         return cv
     }()
     

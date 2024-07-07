@@ -10,7 +10,8 @@ import UIKit
 class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        let uiColor = UIColor(red: 243 / 255, green: 242 / 255, blue: 247 / 255, alpha: 1.0)
+        view.backgroundColor = uiColor
         configureHierarchy()
         configureConstraints()
         configureUI()

@@ -68,5 +68,6 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         }
         contentView.layer.cornerRadius = 10
         contentView.clipsToBounds = true
+        contentView.backgroundColor = .white
     }
 }
