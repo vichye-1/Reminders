@@ -66,6 +66,7 @@ class HomeCollectionViewCell: BaseCollectionViewCell {
         DispatchQueue.main.async {
             self.iconImageView.layer.cornerRadius = self.iconImageView.frame.width / 2
         }
-        contentView.backgroundColor = .brown
+        contentView.layer.cornerRadius = 10
+        contentView.clipsToBounds = true
     }
 }
