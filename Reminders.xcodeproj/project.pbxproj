@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EF9C2F6F2C3B535700A35DE1 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2F6E2C3B535700A35DE1 /* TaskListViewController.swift */; };
 		EF9C2F712C3B588800A35DE1 /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2F702C3B588800A35DE1 /* ReminderRepository.swift */; };
+		EF9C2F752C3BDAA900A35DE1 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2F742C3BDAA900A35DE1 /* TaskListTableViewCell.swift */; };
 		EFAC581C2C33E41F005975DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581B2C33E41F005975DD /* AppDelegate.swift */; };
 		EFAC581E2C33E41F005975DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581D2C33E41F005975DD /* SceneDelegate.swift */; };
 		EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581F2C33E41F005975DD /* HomeViewController.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		EF9C2F6E2C3B535700A35DE1 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		EF9C2F702C3B588800A35DE1 /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
+		EF9C2F742C3BDAA900A35DE1 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
 		EFAC58182C33E41F005975DD /* Reminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAC581B2C33E41F005975DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFAC581D2C33E41F005975DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				EF9C2F6E2C3B535700A35DE1 /* TaskListViewController.swift */,
+				EF9C2F742C3BDAA900A35DE1 /* TaskListTableViewCell.swift */,
 			);
 			path = TaskList;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				EFAC584F2C345A47005975DD /* CellType.swift in Sources */,
 				EFC567082C3587A900E702AD /* TagViewController.swift in Sources */,
 				EFC567142C3930DF00E702AD /* AddImageTableViewCell.swift in Sources */,
+				EF9C2F752C3BDAA900A35DE1 /* TaskListTableViewCell.swift in Sources */,
 				EFAC58492C345754005975DD /* ReuseIdentifierProtocol.swift in Sources */,
 				EFAC58402C33EE37005975DD /* RegisterViewController.swift in Sources */,
 				EFAC58462C3456FF005975DD /* UIView+.swift in Sources */,

@@ -16,10 +16,12 @@ class BaseViewController: UIViewController {
         configureConstraints()
         configureUI()
         configureCollectionView()
+        configureTableView()
     }
     
     func configureHierarchy() { }
     func configureConstraints() { }
     func configureUI() { }
     func configureCollectionView() { }
+    func configureTableView() { }
 }
