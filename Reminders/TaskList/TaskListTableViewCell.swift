@@ -34,13 +34,21 @@ class TaskListTableViewCell: BaseTableViewCell {
         return label
     }()
     
+    private let tagLabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 15)
+        label.textAlignment = .left
+        label.backgroundColor = .systemMint
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .customBackGround
     }
     
     override func configureHierarchy() {
-        [checkButton, titleLabel, contentLabel].forEach {
+        [checkButton, titleLabel, contentLabel, tagLabel].forEach {
             contentView.addSubview($0)
         }
     }
@@ -62,6 +70,12 @@ class TaskListTableViewCell: BaseTableViewCell {
         contentLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(4)
             make.horizontalEdges.equalTo(titleLabel)
+            make.height.equalTo(24)
+        }
+        
+        tagLabel.snp.makeConstraints { make in
+            make.top.equalTo(contentLabel.snp.bottom).offset(4)
+            make.horizontalEdges.equalTo(contentLabel)
             make.height.equalTo(24)
         }
     }
