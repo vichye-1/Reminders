@@ -76,6 +76,16 @@ class TaskListTableViewCell: BaseTableViewCell {
         }
     }
     
+    override func configureUI() {
+        checkButton.addTarget(self, action: #selector(checkButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func checkButtonTapped() {
+        
+    }
+    
+    
+    
     func configureTable(reminder: ReminderTable) {
         titleLabel.text = reminder.reminderTitle
         contentLabel.text = reminder.content
