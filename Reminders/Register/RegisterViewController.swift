@@ -17,6 +17,9 @@ protocol PassRegisterDetailDelegate {
 }
 
 class RegisterViewController: BaseViewController {
+    
+    private let repository = ReminderRepository()
+    
     var selectedDueDate: Date?
     var currentTag: String?
     var selectedPriority: Priority?
@@ -56,6 +59,7 @@ class RegisterViewController: BaseViewController {
     @objc
     private func addButtonClicked() {
         print(#function)
+        print(repository.detectRealmURL())
         guard let titleCell = registerTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? TitleTableViewCell,
               let contentCell = registerTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? ContentTableViewCell
         else {

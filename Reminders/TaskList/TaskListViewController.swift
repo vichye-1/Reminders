@@ -6,17 +6,34 @@
 //
 
 import UIKit
+import RealmSwift
 import SnapKit
 
 class TaskListViewController: BaseViewController {
     
-    let identifier = TaskListTableViewCell.identifier
+    private let identifier = TaskListTableViewCell.identifier
+    
+    private let repository = ReminderRepository()
+    private var reminders: Results<ReminderTable>?
     
     private let taskListTableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .customBackGround
         return tableView
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .customBackGround
+        taskListTableView.backgroundColor = .customBackGround
+        fetchReminders()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchReminders()
+        taskListTableView.reloadData()
+    }
     
     override func configureHierarchy() {
         view.addSubview(taskListTableView)
@@ -33,15 +50,23 @@ class TaskListViewController: BaseViewController {
         taskListTableView.dataSource = self
         taskListTableView.register(TaskListTableViewCell.self, forCellReuseIdentifier: identifier)
     }
+    
+    private func fetchReminders() {
+        reminders = repository.fetchAll()
+    }
 }
 
 extension TaskListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return reminders?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TaskListTableViewCell
+        cell.backgroundColor = .customBackGround
+        if let reminder = reminders?[indexPath.row] {
+            cell.configureTable(reminder: reminder)
+        }
         return cell
     }
     

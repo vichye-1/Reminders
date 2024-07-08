@@ -13,7 +13,6 @@ class TaskListTableViewCell: BaseTableViewCell {
     private let checkButton = {
         let button = UIButton()
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.systemGray.cgColor
         button.layer.cornerRadius = 12
         return button
     }()
@@ -22,7 +21,6 @@ class TaskListTableViewCell: BaseTableViewCell {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 16)
         label.textAlignment = .left
-        label.backgroundColor = .systemBlue
         return label
     }()
     
@@ -30,7 +28,6 @@ class TaskListTableViewCell: BaseTableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15)
         label.textAlignment = .left
-        label.backgroundColor = .systemPink
         return label
     }()
     
@@ -38,7 +35,6 @@ class TaskListTableViewCell: BaseTableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15)
         label.textAlignment = .left
-        label.backgroundColor = .systemMint
         return label
     }()
     
@@ -78,5 +74,11 @@ class TaskListTableViewCell: BaseTableViewCell {
             make.horizontalEdges.equalTo(contentLabel)
             make.height.equalTo(24)
         }
+    }
+    
+    func configureTable(reminder: ReminderTable) {
+        titleLabel.text = reminder.reminderTitle
+        contentLabel.text = reminder.content
+        tagLabel.text = reminder.tag
     }
 }

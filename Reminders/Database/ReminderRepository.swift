@@ -22,6 +22,10 @@ final class ReminderRepository {
         }
     }
     
+    func detectRealmURL() {
+        print(realm.configuration.fileURL ?? "")
+    }
+    
     func fetchAll() -> Results<ReminderTable> {
         return realm.objects(ReminderTable.self).sorted(byKeyPath: "dueDate", ascending: true)
     }
