@@ -10,6 +10,7 @@
 		EF9C2F6F2C3B535700A35DE1 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2F6E2C3B535700A35DE1 /* TaskListViewController.swift */; };
 		EF9C2F712C3B588800A35DE1 /* ReminderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2F702C3B588800A35DE1 /* ReminderRepository.swift */; };
 		EF9C2F752C3BDAA900A35DE1 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2F742C3BDAA900A35DE1 /* TaskListTableViewCell.swift */; };
+		EF9C2F772C3BDFA300A35DE1 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C2F762C3BDFA300A35DE1 /* UIColor+.swift */; };
 		EFAC581C2C33E41F005975DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581B2C33E41F005975DD /* AppDelegate.swift */; };
 		EFAC581E2C33E41F005975DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581D2C33E41F005975DD /* SceneDelegate.swift */; };
 		EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC581F2C33E41F005975DD /* HomeViewController.swift */; };
@@ -21,7 +22,6 @@
 		EFAC583A2C33E895005975DD /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC58392C33E895005975DD /* IQKeyboardManagerSwift */; };
 		EFAC583D2C33E95D005975DD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EFAC583C2C33E95D005975DD /* RealmSwift */; };
 		EFAC58402C33EE37005975DD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC583F2C33EE37005975DD /* RegisterViewController.swift */; };
-		EFAC58442C3456E6005975DD /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58432C3456E6005975DD /* UIViewController+.swift */; };
 		EFAC58462C3456FF005975DD /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58452C3456FF005975DD /* UIView+.swift */; };
 		EFAC58492C345754005975DD /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC58482C345754005975DD /* ReuseIdentifierProtocol.swift */; };
 		EFAC584C2C3458DD005975DD /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC584B2C3458DD005975DD /* TitleTableViewCell.swift */; };
@@ -44,6 +44,7 @@
 		EF9C2F6E2C3B535700A35DE1 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		EF9C2F702C3B588800A35DE1 /* ReminderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepository.swift; sourceTree = "<group>"; };
 		EF9C2F742C3BDAA900A35DE1 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
+		EF9C2F762C3BDFA300A35DE1 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		EFAC58182C33E41F005975DD /* Reminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAC581B2C33E41F005975DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFAC581D2C33E41F005975DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		EFAC58292C33E421005975DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFAC58302C33E5B6005975DD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EFAC583F2C33EE37005975DD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		EFAC58432C3456E6005975DD /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		EFAC58452C3456FF005975DD /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		EFAC58482C345754005975DD /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 		EFAC584B2C3458DD005975DD /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,8 +158,8 @@
 		EFAC58422C3456CD005975DD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EFAC58432C3456E6005975DD /* UIViewController+.swift */,
 				EFAC58452C3456FF005975DD /* UIView+.swift */,
+				EF9C2F762C3BDFA300A35DE1 /* UIColor+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -316,9 +316,9 @@
 				EFC567032C35259100E702AD /* ComponentTableViewCell.swift in Sources */,
 				EFAC58552C346A51005975DD /* ReminderModel.swift in Sources */,
 				EFAC58512C345ADC005975DD /* BaseTableViewCell.swift in Sources */,
-				EFAC58442C3456E6005975DD /* UIViewController+.swift in Sources */,
 				EFAC58312C33E5B6005975DD /* BaseViewController.swift in Sources */,
 				EFC567192C398FA400E702AD /* HomeCollectionViewCell.swift in Sources */,
+				EF9C2F772C3BDFA300A35DE1 /* UIColor+.swift in Sources */,
 				EFC5671B2C39EEC800E702AD /* BaseCollectionViewCell.swift in Sources */,
 				EFAC581C2C33E41F005975DD /* AppDelegate.swift in Sources */,
 				EFAC584C2C3458DD005975DD /* TitleTableViewCell.swift in Sources */,

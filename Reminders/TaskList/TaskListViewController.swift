@@ -14,6 +14,7 @@ class TaskListViewController: BaseViewController {
     
     private let taskListTableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = .customBackGround
         return tableView
     }()
     
