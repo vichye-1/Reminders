@@ -10,10 +10,14 @@ import SnapKit
 
 class TaskListTableViewCell: BaseTableViewCell {
     
+    var reminder: ReminderTable?
+    var checkButtonHandler: ((Bool) -> Void)?
+    
     private let checkButton = {
         let button = UIButton()
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 12
+        button.layer.borderColor = UIColor.systemGray.cgColor
         return button
     }()
     
@@ -81,14 +85,31 @@ class TaskListTableViewCell: BaseTableViewCell {
     }
     
     @objc private func checkButtonTapped() {
-        
+        guard var reminder = reminder else { return }
+        reminder.isCompleted.toggle()
+        updateComplete(isCompleted: reminder.isCompleted)
+        checkButtonHandler?(reminder.isCompleted)
     }
     
-    
+    private func updateComplete(isCompleted: Bool) {
+        if isCompleted {
+            checkButton.backgroundColor = .systemGray
+            titleLabel.attributedText = titleLabel.text?.strikeThrough()
+            contentLabel.attributedText = contentLabel.text?.strikeThrough()
+            tagLabel.attributedText = tagLabel.text?.strikeThrough()
+        } else {
+            checkButton.backgroundColor = .clear
+            titleLabel.attributedText = nil
+            titleLabel.text = reminder?.reminderTitle
+            contentLabel.attributedText = nil
+            contentLabel.text = reminder?.content
+            tagLabel.attributedText = nil
+            tagLabel.text = reminder?.tag
+        }
+    }
     
     func configureTable(reminder: ReminderTable) {
-        titleLabel.text = reminder.reminderTitle
-        contentLabel.text = reminder.content
-        tagLabel.text = reminder.tag
+        self.reminder = reminder
+        updateComplete(isCompleted: reminder.isCompleted)
     }
 }

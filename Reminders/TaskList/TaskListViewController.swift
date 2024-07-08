@@ -66,6 +66,11 @@ extension TaskListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = .customBackGround
         if let reminder = reminders?[indexPath.row] {
             cell.configureTable(reminder: reminder)
+            
+            cell.checkButtonHandler = { _ in
+                self.repository.toggleReminder(reminder)
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
         }
         return cell
     }

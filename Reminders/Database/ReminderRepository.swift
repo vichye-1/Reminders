@@ -30,14 +30,14 @@ final class ReminderRepository {
         return realm.objects(ReminderTable.self).sorted(byKeyPath: "dueDate", ascending: true)
     }
     
-    func deleteReminder(_ reminder: ReminderTable) {
+    func toggleReminder(_ reminder: ReminderTable) {
         do {
             try realm.write {
-                realm.delete(reminder)
-                print("Realm delete succeed")
+                reminder.isCompleted.toggle()
+                print("Realm toggle succeed")
             }
         } catch {
-            print("Fail delete")
+            print("Fail toggle")
         }
     }
 }
