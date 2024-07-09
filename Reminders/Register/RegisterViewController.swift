@@ -18,6 +18,7 @@ protocol PassRegisterDetailDelegate {
 
 class RegisterViewController: BaseViewController {
     
+    private let viewModel = RegisterViewModel()
     private let repository = ReminderRepository()
     
     var selectedDueDate: Date?
@@ -33,6 +34,11 @@ class RegisterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableview()
+        bindDate()
+    }
+    
+    private func bindDate() {
+        
     }
     
     override func configureHierarchy() {

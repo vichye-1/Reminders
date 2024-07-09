@@ -40,6 +40,7 @@
 		EFC567192C398FA400E702AD /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567182C398FA400E702AD /* HomeCollectionViewCell.swift */; };
 		EFC5671B2C39EEC800E702AD /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC5671A2C39EEC800E702AD /* BaseCollectionViewCell.swift */; };
 		EFE548E62C3D2BC90033A6A9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE548E52C3D2BC90033A6A9 /* Observable.swift */; };
+		EFE548E92C3D324F0033A6A9 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE548E82C3D324F0033A6A9 /* RegisterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		EFC567182C398FA400E702AD /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFC5671A2C39EEC800E702AD /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFE548E52C3D2BC90033A6A9 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		EFE548E82C3D324F0033A6A9 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,9 +153,10 @@
 		EFAC583E2C33EE13005975DD /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				EFE548E82C3D324F0033A6A9 /* RegisterViewModel.swift */,
+				EFE548E72C3D323E0033A6A9 /* DueDate */,
 				EFAC584A2C345842005975DD /* Cell */,
 				EFAC583F2C33EE37005975DD /* RegisterViewController.swift */,
-				EFC567052C35339300E702AD /* DueDateViewController.swift */,
 				EFC567072C3587A900E702AD /* TagViewController.swift */,
 				EFC567092C35886B00E702AD /* PriorityViewController.swift */,
 			);
@@ -222,6 +225,14 @@
 				EFC567182C398FA400E702AD /* HomeCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EFE548E72C3D323E0033A6A9 /* DueDate */ = {
+			isa = PBXGroup;
+			children = (
+				EFC567052C35339300E702AD /* DueDateViewController.swift */,
+			);
+			path = DueDate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 				EFAC584C2C3458DD005975DD /* TitleTableViewCell.swift in Sources */,
 				EFC5670A2C35886B00E702AD /* PriorityViewController.swift in Sources */,
 				EFC567012C351FBC00E702AD /* ContentTableViewCell.swift in Sources */,
+				EFE548E92C3D324F0033A6A9 /* RegisterViewModel.swift in Sources */,
 				EFAC581E2C33E41F005975DD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
