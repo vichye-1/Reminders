@@ -39,6 +39,7 @@
 		EFC567162C39388B00E702AD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EFC567152C39388B00E702AD /* .gitignore */; };
 		EFC567192C398FA400E702AD /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC567182C398FA400E702AD /* HomeCollectionViewCell.swift */; };
 		EFC5671B2C39EEC800E702AD /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC5671A2C39EEC800E702AD /* BaseCollectionViewCell.swift */; };
+		EFE548E62C3D2BC90033A6A9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE548E52C3D2BC90033A6A9 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		EFC567152C39388B00E702AD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EFC567182C398FA400E702AD /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFC5671A2C39EEC800E702AD /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		EFE548E52C3D2BC90033A6A9 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				EFAC58242C33E421005975DD /* Assets.xcassets */,
 				EFAC58262C33E421005975DD /* LaunchScreen.storyboard */,
 				EFAC58292C33E421005975DD /* Info.plist */,
+				EFE548E52C3D2BC90033A6A9 /* Observable.swift */,
 			);
 			path = Reminders;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE548E62C3D2BC90033A6A9 /* Observable.swift in Sources */,
 				EFC567122C3837A900E702AD /* Priority.swift in Sources */,
 				EF9C2F712C3B588800A35DE1 /* ReminderRepository.swift in Sources */,
 				EFAC58202C33E41F005975DD /* HomeViewController.swift in Sources */,
